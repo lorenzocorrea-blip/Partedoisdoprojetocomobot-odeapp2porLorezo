@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta do Clima</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- PWA -->
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#1f5c99">
+    <!-- Ícones -->
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="192x192"
+        href="./icons/icon-192.png"
+    >
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="512x512"
+        href="./icons/icon-512.png"
+    >
+    <link
+        rel="apple-touch-icon"
+        sizes="192x192"
+        href="./icons/icon-192.png"
+    >
+    <!-- PWA mobile -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+</head>
+<body>
+    <main class="container">
+        <div class="card">
+            <div id="offlineAviso" class="offline">
+                🔴 Você está sem conexão.<br>
+                Algumas funções podem não funcionar.
+            </div>
+            <h1>Consulta do Clima</h1>
+            <label for="cidade">
+                Digite uma cidade:
+            </label>
+            <input
+                type="text"
+                id="cidade"
+                placeholder="Ex.: Lages"
+                autocomplete="off"
+            >
+            <button id="buscar" type="button">
+                Buscar clima
+            </button>
+
+            <!-- Botão de instalar o app (aparece só quando o navegador permite) -->
+            <button id="instalarBtn" type="button" class="btn-instalar" hidden>
+                📲 Instalar App
+            </button>
+
+            <section id="resultado"></section>
+        </div>
+    </main>
+    <script src="./script.js"></script>
+</body>
+</html>
