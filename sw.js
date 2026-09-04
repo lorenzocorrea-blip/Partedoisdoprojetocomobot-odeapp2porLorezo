@@ -1,4 +1,4 @@
-const CACHE_NAME = "clima-app-v6";
+const CACHE_NAME = "clima-app-v8";
 
 const ARQUIVOS_PARA_CACHE = [
     "./",
@@ -78,12 +78,10 @@ self.addEventListener("fetch", (event) => {
         caches.match(event.request)
             .then((resposta) => {
 
-                // Se estiver no cache
                 if (resposta) {
                     return resposta;
                 }
 
-                // Caso contrário, busca na internet
                 return fetch(event.request);
 
             })
