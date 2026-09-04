@@ -326,29 +326,27 @@ window.addEventListener(
 
 if ("serviceWorker" in navigator) {
 
-    window.addEventListener(
-        "load",
-        () => {
+    window.addEventListener("load", async () => {
 
-            navigator.serviceWorker
-                .register("./sw.js")
-                .then((registro) => {
+        try {
 
-                    console.log(
-                        "Service Worker registrado com sucesso.",
-                        registro
-                    );
+            const registro =
+                await navigator.serviceWorker.register("./sw.js");
 
-                })
-                .catch((erro) => {
+            console.log(
+                "Service Worker registrado com sucesso:",
+                registro.scope
+            );
 
-                    console.error(
-                        "Erro ao registrar o Service Worker:",
-                        erro
-                    );
+        } catch (erro) {
 
-                });
+            console.error(
+                "Erro ao registrar o Service Worker:",
+                erro
+            );
 
         }
-    );
+
+    });
+
 }
